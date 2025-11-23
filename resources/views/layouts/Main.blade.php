@@ -7,13 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     @vite(
         [
-            'resources/sass/app.scss', 
-            'resources/js/app.js', 
-            'resources/js/jquery.dataTables.min.js', 
-            'resources/css/jquery.dataTables.min.css', 
-            'node_modules/sweetalert2/dist/sweetalert2.min.js', 
-            'node_modules/sweetalert2/dist/sweetalert2.min.css', 
-            'resources/css/toast.css',
+            'resources/css/app.css', 
+            'resources/js/app.js'
         ])
     <script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
 </head>
