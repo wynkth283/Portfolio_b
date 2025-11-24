@@ -123,12 +123,12 @@ class UserController extends Controller
         return response()->json(['message' => 'success'], 200);
     }
 
-    public function passwordchange(Request $request, $id)
+    public function passwordchange(Request $request)
     {
         $user = $request->user();
 
-        if (!$user || $user->id != $id) {
-            return response()->json(['message' => 'Không có quyền!'], 403);
+        if (!$user) {
+            return response()->json(['message' => 'Chưa đăng nhập'], 401);
         }
 
         $request->validate([
@@ -141,8 +141,8 @@ class UserController extends Controller
             'confirm_password' => 'required|string|same:new_password',
         ]);
 
-        User::findOrFail($id)->update([
-            'password' => bcrypt($request->input('new_password'))
+        $user->update([
+            'password' => bcrypt($request->input('new_password')),
         ]);
 
         return response()->json(['message' => 'success'], 200);

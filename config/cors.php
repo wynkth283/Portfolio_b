@@ -5,8 +5,8 @@ return [
 
     'allowed_methods' => ['*'],
 
-    // 'allowed_origins' => ['http://localhost:5174'],
-    'allowed_origins' => ['*'],
+    'allowed_origins' => [env('FRONTEND_URL')],
+    // 'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 

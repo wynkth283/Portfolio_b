@@ -47,16 +47,19 @@
         <div class="dropdown">
             <button type="button" class="dropdown-toggle btn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="{{ asset('IMG/hero.jpg') }}" alt="" width="32" height="32" class="rounded-circle me-2">
-                User
+                {{ session('admin_user')->name }}
             </button>
 
             <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="{{ env('FRONTEND_URL') }}">View Portfolio</a></li>
                 <li><a class="dropdown-item" href="#">Settings</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
+                @if(session('admin_user'))
+                <li><a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                @endif
             </ul>
+        </div>
     </div>
 </nav>
